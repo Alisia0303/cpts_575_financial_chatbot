@@ -91,7 +91,7 @@ if __name__ == '__main__':
                        help='Specify the company ticket path')
     parser.add_argument('--N', type=int, default=500,
                        help='Filter the first N company records')
-    parser.add_argument('--document-path', type=str, default=f'{filing_dir}/SEC/',
+    parser.add_argument('--document-path', type=str, default='./SEC/',
                        help='Specify the SEC document path')
     parser.add_argument('--chunk-size', type=int, default=7000,
                        help='Indicate document chunk size')
@@ -105,7 +105,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     
-    device = torch.device('cuda:0')
+    # device = torch.device('cuda:0')
+    device = "cpu"
 
     pdfGeneratorApi = PdfGeneratorApi(args.generator_key)
     download_dataset(pdfGeneratorApi, args.filing_dir, args.ticket_path, args.N)
