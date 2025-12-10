@@ -106,6 +106,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     # device = torch.device('cuda:0')
+
     device = "cpu"
 
     pdfGeneratorApi = PdfGeneratorApi(args.generator_key)
