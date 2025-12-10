@@ -5,6 +5,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 import os
 import gradio as gr
+import argparse
 
 # 3. Load and use vector database
 def load_vector_database(model, device, database_path):
@@ -40,7 +41,7 @@ def finchatv2(question,history, company):
     tollm=example_prompt.format(**d)
     res = llm.invoke(tollm)
     metainformation = docs_to_info(docs)
-    bot_message = "## Answer about "+company+"\n**"+res.content+"**\n ### Source
+    bot_message = "## Answer about "+company+"\n**"+res.content+"**\n"
     history.append((question, bot_message))
     return "", history
 
@@ -81,7 +82,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    device = torch.device('cuda:0')
+    device = "cpu"
 
     # 1. Using Gemini LLM
     os.environ["GOOGLE_API_KEY"] = args.google_key

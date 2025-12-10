@@ -3,3 +3,5 @@ langchain_community
 langchain-google-genai
 sec-api
 pypdf
+sentence-transformers
+gradio
