@@ -15,7 +15,9 @@ This step downloads SEC 10K fillings into `SEC` folder, then embeds records into
 
 `python installer.py --generator-key <YOUR KEY> --filing-dir <YOUR DIR> --ticket-path <YOUR FILE PATH> --N <e.g., 100> --document-path <YOUR PATH> --chunk-size <e.g., 7000> --chunk-overlap <e.g., 700> --separator <e.g., "\n"> --encoder <YOUR MODEL> --database-path <YOUR VECTOR DATABASE PATH>`
 
-### 4. ** Test chatbot:**
+### 4. **Test chatbot:**
 To test chatbot, use this command:
 
 `python run_chatbot.py --google-key <YOUR GOOGLE API KEY> --llm <YOUR LLM> --encoder <YOUR ENCODER> --database-path <YOUR VECTOR DATABASE PATH>`
+
+For quick results, we uploaded `Demo.ipynb` to show some testing outputs during developing.
